@@ -1,0 +1,7 @@
+def solution(array):
+    result = ""
+    
+    for a in array: 
+        result += str(a)
+    
+    return result.count("7")
