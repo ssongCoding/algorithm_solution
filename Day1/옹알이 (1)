@@ -1,0 +1,13 @@
+def solution(babbling):
+    answer = 0
+    words = ["aya", "ye", "woo", "ma"]
+    
+    for b in babbling:
+        for w in words:
+            b = b.replace(w, "1")
+            
+            if b.isdigit():
+                answer += 1
+                break
+    
+    return answer
