@@ -1,0 +1,38 @@
+def solution(survey, choices):
+    cate_dict = {
+        'R' : 0, 'T' : 0,
+        'C' : 0, 'F' : 0,
+        'J' : 0, 'M' : 0,
+        'A' : 0, 'N' : 0
+    }
+    
+    for cate, choice in zip(survey, choices):
+        if choice >= 4:
+            choice = choice - 4
+            cate_dict[cate[1]] += choice
+        else:    # 1, 2, 3
+            choice = 4 - choice
+            cate_dict[cate[0]] += choice
+            
+    ans = ''
+    if cate_dict['R'] >= cate_dict['T']: 
+        ans += 'R'
+    else:
+        ans += 'T'
+    
+    if cate_dict['C'] >= cate_dict['F']: 
+        ans += 'C'
+    else:
+        ans += 'F'
+    
+    if cate_dict['J'] >= cate_dict['M']: 
+        ans += 'J'
+    else:
+        ans += 'M'
+        
+    if cate_dict['A'] >= cate_dict['N']: 
+        ans += 'A'
+    else:
+        ans += 'N'
+    
+    return ans
