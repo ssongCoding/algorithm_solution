@@ -1,0 +1,15 @@
+import sys
+
+# 학생 수 n, 구간 개수 k
+n, k =map(int,sys.stdin.readline().split())
+
+# 학생 성적 (1부터 n까지)
+s = list(map(int,sys.stdin.readline().split()))
+
+for i in range(k):
+    a, b = list(map(int,sys.stdin.readline().split()))
+    
+    num = b-a+1
+    average = sum(s[a-1:b])/num
+    
+    print("%0.2f" % average)
