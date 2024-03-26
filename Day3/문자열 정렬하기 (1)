@@ -1,0 +1,10 @@
+def solution(my_string):
+    answer = []
+    
+    # "hi12392" -> [1, 2, 2, 3, 9]
+    
+    for n in my_string: # 1) 문자 하나씩 뜯어서, 
+        if n.isdigit(): # n의 모든 문자가 숫자야 아니야?
+            answer.append(int(n)) # 2) 만약 숫자면? answer에 추가
+        
+    return sorted(answer) # 3) answer를 오름차순 정렬해서 반환
