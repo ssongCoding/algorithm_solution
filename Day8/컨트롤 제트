@@ -1,0 +1,11 @@
+def solution(s):
+    s_list = s.split(" ")  # ['1', '2', 'Z', '3']
+
+    answer = 0
+    for i in range(len(s_list)):  # 리스트 길이만큼 반복 (리스트 인덱스 사용하고 싶어서 range)
+        if s_list[i] == "Z": # Z가 나오면..
+            answer -= int(s_list[i - 1])  # answer에서 이전에 더했던 숫자 다시 빼줘야지
+        else:  # 숫자이면
+            answer += int(s_list[i])  # answer에 더해줘야지
+
+    return answer
