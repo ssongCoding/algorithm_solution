@@ -1,0 +1,11 @@
+def solution(s):
+    if s.count('(') == s.count(')'): # 일단 짝은 맞음, 순서는 보장 X
+        for i in range(len(s)//2):
+            s = s.replace('()','')
+            
+        if s == '':
+            return True 
+        else:
+            return False
+    else:
+        return False
